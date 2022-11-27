@@ -6,7 +6,6 @@
 #include <vector>
 #include <fstream>
 
-
 void print_matrix(int** g, int vertices) {
     for (int i = 0; i < vertices; ++i)
     {
@@ -65,46 +64,6 @@ void delete_matrix(int** g, int vertices) {
     }
     delete[] g;
 }
-
-//void generate_graph(std::vector<std::vector<int>> g,int vertices) {
-//    /*Максимальный вес ребра*/
-//    int maxW = 100;
-//    /*Вес для конкретного ребра*/
-//    int w;
-//
-//    srand(time(NULL));
-//    for (int i = 0; i < vertices; ++i)
-//    {
-//        for (int j = 0; j < vertices; ++j)
-//        {
-//            if (i == j) {
-//                g[i].push_back(0);
-//            }
-//
-//            else {
-//                w = rand() % maxW;
-//                g[i][j] = w;
-//                g[j][i] = w; 
-//            }
-//
-//        }
-//        // Исключаем возможность появления несвязного графа
-//        int nu = 0;
-//        for (int j = i+1; j < vertices; j++)
-//        {
-//            if (g[i][j] == 0) {
-//                ++nu;
-//              }
-//        }
-//        if (nu == vertices - (i + 1)) {
-//            w = (rand() % (maxW - 1));
-//            g[i][rand() % vertices] = 1 + w;
-//            g[rand() % vertices][i] = 1 + w;
-//        }
-//    }
-//
-//    print_graph(g, vertices);
-//}
 
 int minimum_key(int*k, int* mst, int vertices)    
 {  
@@ -191,40 +150,8 @@ void test_prim(int vertices, int mult, int maxIteration, int maxVert) {
 
 int main()    
 {    
+    /*n = {256, 320, 384, 448, 512, 640, 768, 896, 1024, 1280, 1536, 1792, 2048, 2560, 3072, 3584, 4096, 5120, 6144, 7168, 8192, 10240, 12288, 14336}*/
     test_prim(256, 2 , 14,10000);
-
-    //std::vector<std::vector<int>> g;
-    /* g =  {
-         {0, 0, 3, 0, 0},    
-         {0, 0, 10, 4, 0},    
-         {3, 10, 0, 2, 6},    
-         {0, 4, 2, 0, 1},    
-         {0, 0, 6, 1, 0}};*/   
-    /*for (int i = 0; i < vertices; ++i)
-    {
-        for (int j = i; j < vertices; ++j)
-        {
-            g[i][j] = 0;
-            g[j][i] = 0;
-        }
-    }
-    g[0][2] = 3;
-    g[2][0] = 3;
-
-    g[1][2] = 10;
-    g[2][1] = 10;
-
-    g[1][3] = 4;
-    g[3][1] = 4;
-
-    g[2][3] = 2;
-    g[3][2] = 2;
-
-    g[2][4] = 6;
-    g[4][2] = 6;
-
-    g[3][4] = 1;
-    g[4][3] = 1;*/
     return 0;  
 }  
 
